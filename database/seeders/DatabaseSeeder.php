@@ -26,46 +26,5 @@ class DatabaseSeeder extends Seeder
             'user_id' => $user->id,
         ]);
 
-        // $personal = Category::create([
-        //     'name'=>'Personal',
-        //     'slug'=> 'personal',
-        // ]);
-        // $family = Category::create([
-        //     'name'=>'Family',
-        //     'slug'=> 'family',
-        // ]);
-        // $work = Category::create([
-        //     'name'=>'Work',
-        //     'slug'=> 'work',
-        // ]);
-
-        // Post::create([
-        //     'user_id'=> $user->id,
-        //     'category_id' => $family->id,
-        //     'title' => 'My Family',
-        //     'slug'=> 'my-first-post',
-        //     'excerpt'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. ?',
-        //     'body'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ipsam libero ex animi et! Illum architecto ea, numquam id veritatis quaerat deleniti laborum rerum, repellat neque sed repudiandae asperiores. Suscipit!'
-        // ]);
-        // Post::create([
-        //     'user_id'=> $user->id,
-        //     'category_id' => $work->id,
-        //     'title' => 'My work',
-        //     'slug'=> 'my-second-post',
-        //     'excerpt'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. ?',
-        //     'body'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ipsam libero ex animi et! Illum architecto ea, numquam id veritatis quaerat deleniti laborum rerum, repellat neque sed repudiandae asperiores. Suscipit!'
-        // ]);
-        // Post::create([
-        //     'user_id'=> $user->id,
-        //     'category_id' => $personal->id,
-        //     'title' => 'My Personal',
-        //     'slug'=> 'my-third-post',
-        //     'excerpt'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. ?',
-        //     'body'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ipsam libero ex animi et! Illum architecto ea, numquam id veritatis quaerat deleniti laborum rerum, repellat neque sed repudiandae asperiores. Suscipit!'
-        // ]);
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
