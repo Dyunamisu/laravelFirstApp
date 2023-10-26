@@ -48,6 +48,40 @@
                         {!! $post->body !!}
                     </div>
                 </div>
+                
+                <section class="col-span-8 col-start-5 mt-4 space-y-4">
+                    @if (auth()->check())
+                        <x-panel>
+                            <form action="/posts/{{ $post->slug }}/comments" method="post" class="rounded-xl border border-gray-200 p-6">
+                                @csrf
+                                <header class="flex item-center">
+                                    <img src="https://i.pravatar.cc/40?u={{ auth()->id()}}" alt="" width="40" class="rounded-full">
+                                    <h2 class="ml-3">
+                                        Want to participate? 
+                                    </h2>
+                                </header>
+                                <div class="mt-4">
+                                    <textarea name="body" id="body" cols="30" rows="5" class="w-full text-sm focus:outline-none" placeholder="Quick, Say Something!" required></textarea>
+                                    @error('body')
+                                        <span class="text-sm text-red-500">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="flex justify-end">
+                                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit ">
+                                        Post
+                                    </button>                        
+                                </div>
+                            </form> 
+                        </x-panel>
+                    @else
+                        <p class="font-bold">
+                            <a href="/Register" class="hover:underline">Register to leave a comment !</a> or <a href="/login" class="hover:underline">Login to leave a comment !</a>
+                        </p>
+                    @endif
+                    @foreach ($post->comments as $comment)
+                        <x-post-comment :comment="$comment"/>
+                    @endforeach
+                </section>
             </article>
         </main>
 
