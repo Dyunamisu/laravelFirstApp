@@ -14,11 +14,14 @@ class RegisterController extends Controller
         $attributes = request()->validate([
             'name' => 'required|max:255',
             'username' => 'required|min:3|max:255|unique:users,username',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:7|max:20'
         ]);
-        User::create($attributes);
+        $user=User::create($attributes);
+        // session()->flash('success','Your Account have been created.');
 
-        return redirect('/');
+        auth()->login($user);
+
+        return redirect('/')->with('success','Your Account have been created.');
     }
 }
